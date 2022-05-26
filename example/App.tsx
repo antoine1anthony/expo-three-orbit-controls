@@ -40,18 +40,18 @@ export default function App() {
 
     setCamera(camera);
 
-    const scene = new Scene();
-    scene.fog = new Fog(sceneColor, 1, 10000);
-    scene.add(new GridHelper(10, 10));
+    const scene = new Scene(); //Canvas <-- 
+    scene.fog = new Fog(sceneColor, 1, 10000); //Canvas <-- 
+    scene.add(new GridHelper(10, 10)); //Canvas <-- 
 
-    const ambientLight = new AmbientLight(0x101010);
+    const ambientLight = new AmbientLight(0x101010); //ambientLight
     scene.add(ambientLight);
 
-    const pointLight = new PointLight(0xffffff, 2, 1000, 1);
+    const pointLight = new PointLight(0xffffff, 2, 1000, 1); //pointLight
     pointLight.position.set(0, 200, 200);
     scene.add(pointLight);
 
-    const spotLight = new SpotLight(0xffffff, 0.5);
+    const spotLight = new SpotLight(0xffffff, 0.5); //spotLight
     spotLight.position.set(0, 500, 100);
     spotLight.lookAt(scene.position);
     scene.add(spotLight);
